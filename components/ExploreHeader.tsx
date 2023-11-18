@@ -75,7 +75,7 @@ export const ExploreHeader = ({onCategoryChanged}: Props) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
       <View style={styles.container}>
         <View style={styles.actionRow}>
           <Link href={'/(modals)/booking'} asChild>
@@ -138,7 +138,7 @@ export const ExploreHeader = ({onCategoryChanged}: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     height: px(135),
     elevation: 2,
     shadowColor: '#000',
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
 
   searchBtn: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     flexDirection: 'row',
     gap: px(10),
     padding: px(14),

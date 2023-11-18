@@ -26,12 +26,14 @@ export const ListingsBottomSheet = ({listings, category}) => {
         <Listings listings={listings} refresh={refresh} category={category} />
         <View style={styles.absoluteView}>
           <TouchableOpacity onPress={onShowMap} style={styles.btn}>
-            <Text style={{fontFamily: 'SemiBold', color: '#fff'}}>Map</Text>
+            <Text style={{fontFamily: 'SemiBold', color: Colors.white}}>
+              Map
+            </Text>
             <Ionicons
               name="map"
               size={20}
               style={{marginLeft: px(10)}}
-              color={'#fff'}
+              color={Colors.white}
             />
           </TouchableOpacity>
         </View>
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   sheetContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     elevation: 4,
     shadowColor: '#000',
     shadowOpacity: 0.3,

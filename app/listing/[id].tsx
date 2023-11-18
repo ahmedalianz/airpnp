@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   image: {height: IMG_HEIGHT, width: screenWidth},
   infoContainer: {
     padding: px(24),
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
   },
   name: {
     fontSize: px(26),
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
     gap: px(10),
   },
   header: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     height: 100,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: Colors.grey,

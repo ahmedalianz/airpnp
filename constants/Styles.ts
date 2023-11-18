@@ -12,7 +12,7 @@ export const defaultStyles = StyleSheet.create({
     borderColor: '#ABABAB',
     borderRadius: 8,
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
   },
   btn: {
     backgroundColor: Colors.primary,
@@ -22,7 +22,7 @@ export const defaultStyles = StyleSheet.create({
     alignItems: 'center',
   },
   btnText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 16,
     fontFamily: 'Bold',
   },
@@ -36,7 +36,7 @@ export const defaultStyles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderTopColor: Colors.grey,

@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     fontFamily: 'SemiBold',
   },
   btnOutline: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     borderWidth: 1,
     borderColor: Colors.grey,
     height: px(50),
