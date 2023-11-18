@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     height: px(135),
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: Colors.dark,
     shadowOpacity: 0.1,
     shadowRadius: 6,
     shadowOffset: {
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     borderColor: '#c2c2c2',
     borderRadius: px(30),
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: Colors.dark,
     shadowOpacity: 0.12,
     shadowRadius: 8,
     shadowOffset: {
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
   categoryTextActive: {
     fontSize: px(14),
     fontFamily: 'SemiBold',
-    color: '#000',
+    color: Colors.dark,
   },
   categoriesBtn: {
     flex: 1,
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomColor: '#000',
+    borderBottomColor: Colors.dark,
     borderBottomWidth: px(2),
     paddingBottom: px(8),
   },

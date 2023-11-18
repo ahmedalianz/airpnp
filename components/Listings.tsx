@@ -1,6 +1,11 @@
+import Colors from '@/constants/Colors';
 import {IMG_HEIGHT, px} from '@/constants/Layouts';
 import {defaultStyles} from '@/constants/Styles';
 import {Ionicons} from '@expo/vector-icons';
+import {
+  BottomSheetFlatList,
+  BottomSheetFlatListMethods,
+} from '@gorhom/bottom-sheet';
 import {Link} from 'expo-router';
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {
@@ -16,10 +21,16 @@ import Animated, {FadeInRight, FadeOutLeft} from 'react-native-reanimated';
 interface ListingsProps {
   listings: Array<any>;
   category: string;
+  refresh: number;
 }
-export const Listings: FC<ListingsProps> = ({listings, category}) => {
-  const listRef = useRef<FlatList>(null);
+export const Listings: FC<ListingsProps> = ({listings, category, refresh}) => {
+  const listRef = useRef<BottomSheetFlatListMethods>(null);
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    if (refresh) {
+      listRef.current?.scrollToOffset({offset: 0, animated: true});
+    }
+  }, [refresh]);
   useEffect(() => {
     setLoading(true);
     let timer = setTimeout(() => setLoading(false), 500);
@@ -38,7 +49,7 @@ export const Listings: FC<ListingsProps> = ({listings, category}) => {
           />
           <TouchableOpacity
             style={{position: 'absolute', top: px(30), right: px(30)}}>
-            <Ionicons name="heart-outline" size={px(24)} color="#000" />
+            <Ionicons name="heart-outline" size={px(24)} color={Colors.dark} />
           </TouchableOpacity>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Text style={{fontSize: px(16), fontFamily: 'SemiBold'}}>
@@ -62,11 +73,15 @@ export const Listings: FC<ListingsProps> = ({listings, category}) => {
   );
   return (
     <View style={defaultStyles.container}>
-      <FlatList
+      <BottomSheetFlatList
         renderItem={renderRow}
+        showsVerticalScrollIndicator={false}
         data={loading ? [] : listings}
         ref={listRef}
         initialNumToRender={10}
+        ListHeaderComponent={
+          <Text style={styles.info}>{listings.length} homes</Text>
+        }
       />
     </View>
   );

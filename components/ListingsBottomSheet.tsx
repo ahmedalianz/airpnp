@@ -1,14 +1,20 @@
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import React, {useMemo, useRef, useState} from 'react';
+import React, {FC, useMemo, useRef, useState} from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 import {Listings} from './Listings';
 import {Ionicons} from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import {defaultStyles} from '@/constants/Styles';
 import {px} from '@/constants/Layouts';
-
-export const ListingsBottomSheet = ({listings, category}) => {
-  const snapPoints = useMemo(() => ['10%', '80%'], []);
+interface ListingsBottomSheetProps {
+  listings: Array<any>;
+  category: string;
+}
+export const ListingsBottomSheet: FC<ListingsBottomSheetProps> = ({
+  listings,
+  category,
+}) => {
+  const snapPoints = useMemo(() => ['10%', '90%'], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
   const [refresh, setRefresh] = useState<number>(0);
 
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
   sheetContainer: {
     backgroundColor: Colors.white,
     elevation: 4,
-    shadowColor: '#000',
+    shadowColor: Colors.dark,
     shadowOpacity: 0.3,
     shadowRadius: 4,
     shadowOffset: {

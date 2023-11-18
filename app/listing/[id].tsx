@@ -71,10 +71,10 @@ const ListItem = () => {
       headerRight: () => (
         <Animated.View style={styles.bar} entering={FadeInRight.delay(300)}>
           <TouchableOpacity style={styles.roundButton} onPress={shareListing}>
-            <Ionicons name="share-outline" size={22} color={'#000'} />
+            <Ionicons name="share-outline" size={22} color={Colors.dark} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.roundButton}>
-            <Ionicons name="heart-outline" size={22} color={'#000'} />
+            <Ionicons name="heart-outline" size={22} color={Colors.dark} />
           </TouchableOpacity>
         </Animated.View>
       ),
@@ -83,7 +83,7 @@ const ListItem = () => {
           <TouchableOpacity
             style={styles.roundButton}
             onPress={navigation.goBack}>
-            <Ionicons name="chevron-back" size={24} color={'#000'} />
+            <Ionicons name="chevron-back" size={24} color={Colors.dark} />
           </TouchableOpacity>
         </Animated.View>
       ),
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: Colors.white,
-    height: 100,
+    height: px(100),
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: Colors.grey,
   },

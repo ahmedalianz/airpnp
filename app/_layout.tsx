@@ -3,9 +3,12 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import {useFonts} from 'expo-font';
 import {SplashScreen, Stack, useRouter} from 'expo-router';
 import {useEffect} from 'react';
-import {TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 import {ClerkProvider, useAuth} from '@clerk/clerk-expo';
+import {px} from '@/constants/Layouts';
+import {ModalHeaderText} from '@/components';
+import Colors from '@/constants/Colors';
 
 const CLERK_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 const tokenCache = {
@@ -83,7 +86,7 @@ function RootLayoutNav() {
           headerTitleStyle: {fontFamily: 'SemiBold'},
           headerLeft: () => (
             <TouchableOpacity onPress={router.back}>
-              <Ionicons name="close-outline" size={28} />
+              <Ionicons name="close-outline" size={px(28)} />
             </TouchableOpacity>
           ),
         }}
@@ -97,9 +100,19 @@ function RootLayoutNav() {
         options={{
           presentation: 'transparentModal',
           animation: 'fade',
+          headerTransparent: true,
+          headerTitle: () => <ModalHeaderText />,
           headerLeft: () => (
-            <TouchableOpacity onPress={router.back}>
-              <Ionicons name="close-outline" size={28} />
+            <TouchableOpacity
+              onPress={router.back}
+              style={{
+                borderColor: Colors.grey,
+                backgroundColor: Colors.white,
+                borderRadius: px(20),
+                borderWidth: StyleSheet.hairlineWidth,
+                padding: px(4),
+              }}>
+              <Ionicons name="close-outline" size={px(22)} />
             </TouchableOpacity>
           ),
         }}

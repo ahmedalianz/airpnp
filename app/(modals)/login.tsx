@@ -54,14 +54,14 @@ const Login = () => {
         <View
           style={{
             flex: 1,
-            borderBottomColor: 'black',
+            borderBottomColor: Colors.dark,
             borderBottomWidth: StyleSheet.hairlineWidth,
           }}></View>
         <Text style={styles.separator}>or</Text>
         <View
           style={{
             flex: 1,
-            borderBottomColor: 'black',
+            borderBottomColor: Colors.dark,
             borderBottomWidth: StyleSheet.hairlineWidth,
           }}></View>
       </View>
@@ -113,7 +113,7 @@ export default Login;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     padding: px(26),
   },
   separatorView: {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: px(10),
   },
   btnOutlineText: {
-    color: '#000',
+    color: Colors.dark,
     fontSize: px(16),
     fontFamily: 'SemiBold',
   },

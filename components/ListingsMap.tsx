@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import React, {FC, useEffect, useRef} from 'react';
+import React, {FC, memo, useEffect, useRef} from 'react';
 import {px} from '@/constants/Layouts';
 import {defaultStyles} from '@/constants/Styles';
 import MapView from 'react-native-map-clustering';
@@ -18,7 +18,7 @@ const INITIAL_REGION = {
   latitudeDelta: 9,
   longitudeDelta: 9,
 };
-export const ListingsMap: FC<ListingsMapProps> = ({listings}) => {
+const ListingsMapComp: FC<ListingsMapProps> = ({listings}) => {
   const mapRef = useRef<any>(null);
   const router = useRouter();
   // When the component mounts, locate the user
@@ -109,6 +109,7 @@ export const ListingsMap: FC<ListingsMapProps> = ({listings}) => {
     </View>
   );
 };
+export const ListingsMap = memo(ListingsMapComp);
 const styles = StyleSheet.create({
   marker: {
     padding: px(8),
