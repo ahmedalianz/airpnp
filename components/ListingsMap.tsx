@@ -39,7 +39,6 @@ const ListingsMapComp: FC<ListingsMapProps> = ({listings}) => {
     }
 
     let location = await Location.getCurrentPositionAsync({});
-
     const region = {
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,

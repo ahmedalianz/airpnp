@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import {useRef, useState} from 'react';
 import Colors from '@/constants/Colors';
@@ -75,7 +76,12 @@ export const ExploreHeader = ({onCategoryChanged}: Props) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: Colors.white,
+        paddingTop: Platform.OS === 'android' ? px(40) : 0,
+      }}>
       <View style={styles.container}>
         <View style={styles.actionRow}>
           <Link href={'/(modals)/booking'} asChild>
